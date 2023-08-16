@@ -73,6 +73,7 @@ export default function ConnectCalendar() {
     control,
     watch,
     formState: { isSubmitting, errors },
+    // eslint-disable-next-line
   } = useForm<TimeIntervalsFormInput, any, TimeIntervalsFormOutput>({
     resolver: zodResolver(timeIntervalsFormSchema),
     defaultValues: {
