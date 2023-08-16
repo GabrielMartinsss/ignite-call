@@ -34,9 +34,6 @@ export default async function handler(
 
   const { intervals } = timeIntervalsBodySchema.parse(req.body)
 
-  console.log('session: ', session.user.id)
-  console.log('intervals: ', intervals)
-
   await Promise.all(
     intervals.map((interval) => {
       return prisma.userTimeInterval.create({
@@ -50,7 +47,5 @@ export default async function handler(
     }),
   )
 
-  return res.json({
-    session,
-  })
+  return res.status(201).end()
 }
