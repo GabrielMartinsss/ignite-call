@@ -66,7 +66,7 @@ export const TimerPickerItem = styled('button', {
   lineHeight: '$base',
 
   '&:last-child': {
-    paddingBottom: '$6',
+    marginBottom: '$6',
   },
 
   '&:disabled': {
