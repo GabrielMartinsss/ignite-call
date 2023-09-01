@@ -34,6 +34,20 @@ export const TimerPicker = styled('div', {
   bottom: 0,
   right: 0,
   width: 280,
+
+  '&::-webkit-scrollbar': {
+    width: '$2',
+  },
+
+  '&::-webkit-scrollbar-track': {
+    background: '$gray600',
+  },
+
+  '&::-webkit-scrollbar-thumb': {
+    backgroundColor: '$gray400',
+    borderRadius: '$lg',
+    border: '2px solid $gray600',
+  },
 })
 
 export const TimerPickerHeader = styled(Text, {
