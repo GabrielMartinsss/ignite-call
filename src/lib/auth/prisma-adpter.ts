@@ -34,9 +34,9 @@ export function PrismaAdapter(
         id: prismaUser.id,
         name: prismaUser.name,
         username: prismaUser.username,
-        email: prismaUser.email,
+        email: prismaUser.email!,
         emailVerified: null,
-        avatar_url: prismaUser.avatar_url,
+        avatar_url: prismaUser.avatar_url!,
       }
     },
 
@@ -55,9 +55,9 @@ export function PrismaAdapter(
         id: user.id,
         name: user.name,
         username: user.username,
-        email: user.email,
+        email: user.email!,
         emailVerified: null,
-        avatar_url: user.avatar_url,
+        avatar_url: user.avatar_url!,
       }
     },
 
@@ -76,9 +76,9 @@ export function PrismaAdapter(
         id: user.id,
         name: user.name,
         username: user.username,
-        email: user.email,
+        email: user.email!,
         emailVerified: null,
-        avatar_url: user.avatar_url,
+        avatar_url: user.avatar_url!,
       }
     },
 
@@ -105,9 +105,9 @@ export function PrismaAdapter(
         id: user.id,
         name: user.name,
         username: user.username,
-        email: user.email,
+        email: user.email!,
         emailVerified: null,
-        avatar_url: user.avatar_url,
+        avatar_url: user.avatar_url!,
       }
     },
 
@@ -127,9 +127,9 @@ export function PrismaAdapter(
         id: prismaUser.id,
         name: prismaUser.name,
         username: prismaUser.username,
-        email: prismaUser.email,
+        email: prismaUser.email!,
         emailVerified: null,
-        avatar_url: prismaUser.avatar_url,
+        avatar_url: prismaUser.avatar_url!,
       }
     },
 
@@ -193,9 +193,9 @@ export function PrismaAdapter(
           id: user.id,
           name: user.name,
           username: user.username,
-          email: user.email,
+          email: user.email!,
           emailVerified: null,
-          avatar_url: user.avatar_url,
+          avatar_url: user.avatar_url!,
         },
       }
     },
