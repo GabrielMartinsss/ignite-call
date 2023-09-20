@@ -14,7 +14,9 @@ import { useQuery } from '@tanstack/react-query'
 
 interface Availability {
   possibleTimes: number[]
-  availableTimes: number[]
+  blockedTimes: {
+    date: Date
+  }[]
 }
 
 interface CalendaStepProps {
@@ -54,6 +56,21 @@ export function CalendarStep({ onSelectDateTime }: CalendaStepProps) {
     },
   )
 
+  const possibleTimes = availability?.possibleTimes
+  const blockedTimes = availability?.blockedTimes
+
+  const referenceDate = dayjs(String(selectedDateWithoutTime))
+
+  const availableTimes = possibleTimes?.filter((time) => {
+    const isTimeBlocked = blockedTimes?.some(
+      (blockedTime) => new Date(blockedTime.date).getHours() === time,
+    )
+    console.log({ blockedTimes, time })
+
+    const isTimeInPast = referenceDate.set('hour', time).isBefore(new Date())
+    return !isTimeBlocked && !isTimeInPast
+  })
+
   function handleSelectTime(hour: number) {
     const dateWithTime = dayjs(selectedDate)
       .set('hour', hour)
@@ -79,7 +96,7 @@ export function CalendarStep({ onSelectDateTime }: CalendaStepProps) {
                 <TimerPickerItem
                   key={hour}
                   onClick={() => handleSelectTime(hour)}
-                  disabled={!availability.availableTimes.includes(hour)}
+                  disabled={!availableTimes?.includes(hour)}
                 >
                   {String(hour).padStart(2, '0')}:00
                 </TimerPickerItem>
