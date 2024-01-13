@@ -18,6 +18,10 @@ Ao longo do desenvolvimento deste projeto, pude adquirir conhecimento em várias
 
 - **Deploy da Aplicação:** Fiz o processo completo, desde o desenvolvimento até o deploy, garantindo que a aplicação estivesse pronta para uso em um ambiente de produção.
 
+## Ambiente de Deploy
+- **Vercel**
+- **PlanetScale**
+
 ## Preview do Projeto
 
 <img src='./public/preview-project/landing.jpeg' />
